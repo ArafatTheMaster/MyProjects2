@@ -721,12 +721,12 @@ input:-webkit-autofill:active{
           document.getElementById('loggedInSection').style.display = 'none';
           document.querySelector('.login-box').style.display = 'block';
           document.getElementById('backgroundSection').style.display = 'flex'; // Show background section again
-        }, 3600000); // 1 minute (60 seconds * 1000 milliseconds)
+        }, 600000); // 10 minute (60 seconds * 1000 milliseconds)
 
         // Reload the page after 1 minute and 1 seconds (61,000 milliseconds)
         setTimeout(function () {
           location.reload();
-        }, 3601000); // 1 minute (60 seconds) + 1 seconds
+        }, 601000); // 10 minute (60 seconds) + 1 seconds
       });
     }
 
