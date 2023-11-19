@@ -3,6 +3,22 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/JavaScript">
+        // =========FOR Copy , DISABLE F12 & Inspect===========================
+			// Courtesy OF MD ARAFAT
+			function killCopy(e){
+			return false
+			}
+			function reEnable(){
+			return true
+			}
+			document.onselectstart=new Function ("return false")
+			if (window.sidebar){
+			document.onmousedown=killCopy
+			document.onclick=reEnable
+			}
+    // =========FOR Copy , DISABLE F12 & Inspect===========================
+	</script>
       <title>Login Form</title>
       <style>
     /* Your CSS styles */
@@ -25,8 +41,9 @@ input:-webkit-autofill:active{
       </style>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="style.css"> <!-- Link to your external stylesheet -->
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9"></script> <!-- SweetAlert2 library -->
+  	<!-- Jquery Needed for F12 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9"></script> <!-- SweetAlert2 library -->
 </head>
 <body>
   <section id="backgroundSection">
@@ -721,12 +738,12 @@ input:-webkit-autofill:active{
           document.getElementById('loggedInSection').style.display = 'none';
           document.querySelector('.login-box').style.display = 'block';
           document.getElementById('backgroundSection').style.display = 'flex'; // Show background section again
-        }, 60000); // 10 minute (60 seconds * 1000 milliseconds)
+        }, 3600000); // 1 minute (60 seconds * 1000 milliseconds)
 
         // Reload the page after 1 minute and 1 seconds (61,000 milliseconds)
         setTimeout(function () {
           location.reload();
-        }, 61000); // 10 minute (60 seconds) + 1 seconds
+        }, 3601000); // 1 minute (60 seconds) + 1 seconds
       });
     }
 
@@ -750,9 +767,11 @@ input:-webkit-autofill:active{
 
       // Define the valid username and password combinations
       var validCredentials = [
-        { username: "admin", password: "Web&CEO@1234" },
-        { username: "user1", password: "@111" },
-        { username: "user2", password: "@222" },
+        { username: "admin", password: "111" },
+        { username: "user1", password: "111" },
+        { username: "user2", password: "222" },
+        { username: "1767560658", password: "1767560658" },
+        { username: "Sakib42", password: "Hayabusa1300@" },
         // Add more combinations here...
       ];
 
@@ -804,6 +823,25 @@ input:-webkit-autofill:active{
         });
       }
     }
+      
+      
+    // =========FOR Copy , DISABLE F12 & Inspect===========================
+      
+	// Courtesy OF MD ARAFAT
+	window.oncontextmenu = function () {
+				return false;
+			}
+			$(document).keydown(function (event) {
+				if (event.keyCode == 123) {
+					return false;
+				}
+				else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) {
+					return false;
+				}
+			});
+    // =========FOR Copy , DISABLE F12 & Inspect===========================
+      
+      
   </script>
 </body>
 </html>
